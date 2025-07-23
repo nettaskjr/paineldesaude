@@ -48,13 +48,29 @@
     th {
       background-color: #ecf0f1;
     }
-    /* Temas de cor */
     .medico { background-color: #e8f8f5; border-left: 8px solid #1abc9c; }
     .metas { background-color: #fef9e7; border-left: 8px solid #f1c40f; }
     .cronograma { background-color: #f5eef8; border-left: 8px solid #9b59b6; }
     .cardapio { background-color: #fdf2f2; border-left: 8px solid #e74c3c; }
     .mensal { background-color: #ebf5fb; border-left: 8px solid #3498db; }
     .rodape { text-align: center; font-style: italic; margin: 40px 0 20px; color: #7f8c8d; }
+
+    .botao-download {
+      display: block;
+      width: fit-content;
+      margin: 40px auto;
+      padding: 14px 28px;
+      background-color: #27ae60;
+      color: #fff;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: background-color 0.3s;
+    }
+    .botao-download:hover {
+      background-color: #219150;
+    }
   </style>
 </head>
 <body>
@@ -84,14 +100,7 @@
     <p><em>Impressão Geral:</em> Saúde funcional preservada, com sinais de desregulação metabólica que podem ser melhorados com estilo de vida e acompanhamento clínico.</p>
   </section>
 
-  <section style="text-align: center; margin: 40px;">
-  <a href="https://github.com/nettaskjr/paineldesaude/blob/5d0ced10f2c30c789cb3e7f1e33f5ce3a9ab26da/4402025_67409.59468.853403.72240936.pdf?raw=true" 
-     download 
-     style="background-color: #27ae60; color: white; padding: 12px 24px; font-size: 16px; text-decoration: none; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: inline-block;">
-    📥 Baixar Resultado do Exame (PDF)
-  </a>
-  </section>
-
+  <section style="text-align: center;"><a href="https://github.com/nettaskjr/paineldesaude/blob/5d0ced10f2c30c789cb3e7f1e33f5ce3a9ab26da/4402025_67409.59468.853403.72240936.pdf?raw=true"downloadclass="botao-download">📥 Baixar Resultado do Exame (PDF)</a></section>
 
   <section class="metas">
     <h2>🎯 Metas da Semana</h2>
@@ -166,10 +175,5 @@
       <li>Celebrar progresso com recompensa saudável</li>
     </ul>
   </section>
-
-  <div class="rodape">
-    <p>Saúde não é perfeição, é consistência com consciência.</p>
-  </div>
-
-</body>
-</html>
+<div class="rodape"><p>Saúde não é perfeição, é consistência com consciência.</p></div>
+</body></html>
