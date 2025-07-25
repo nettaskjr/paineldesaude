@@ -1,185 +1,155 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Painel de Saúde – Nestor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard Saúde - Nestor Gonçalves</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background-color: #f0f4f8;
-      color: #2c3e50;
-    }
-    h1 {
-      text-align: center;
-      padding: 20px;
-      background-color: #2c3e50;
-      color: #ffffff;
-      margin-bottom: 0;
-    }
-    section {
-      padding: 20px;
+      background-color: #f4f6f8;
       margin: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      color: #2d3436;
     }
-    h2 {
-      margin-top: 0;
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    li::before {
-      content: "✔️ ";
-      margin-right: 4px;
+    h1, h2 {
+      color: #0984e3;
+      margin-top: 30px;
     }
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 10px;
+      font-size: 0.95em;
     }
     th, td {
-      border: 1px solid #bdc3c7;
+      border: 1px solid #dfe6e9;
       padding: 8px;
-      text-align: left;
+      text-align: center;
     }
     th {
-      background-color: #ecf0f1;
+      background-color: #dfe6e9;
     }
-    .medico { background-color: #e8f8f5; border-left: 8px solid #1abc9c; }
-    .metas { background-color: #fef9e7; border-left: 8px solid #f1c40f; }
-    .cronograma { background-color: #f5eef8; border-left: 8px solid #9b59b6; }
-    .cardapio { background-color: #fdf2f2; border-left: 8px solid #e74c3c; }
-    .mensal { background-color: #ebf5fb; border-left: 8px solid #3498db; }
-    .rodape { text-align: center; font-style: italic; margin: 40px 0 20px; color: #7f8c8d; }
-
-    .botao-download {
-      display: block;
-      width: fit-content;
-      margin: 40px auto;
-      padding: 14px 28px;
-      background-color: #27ae60;
-      color: #fff;
-      font-size: 16px;
+    ul {
+      padding-left: 20px;
+    }
+    .bar-container {
+      background: #dfe6e9;
+      border-radius: 5px;
+      overflow: hidden;
+      height: 25px;
+      margin: 5px 0;
+    }
+    .bar {
+      height: 100%;
+      background-color: #00cec9;
+      text-align: right;
+      padding-right: 8px;
+      color: white;
+      font-weight: bold;
+    }
+    .status-ok { color: green; font-weight: bold; }
+    .status-alerta { color: orange; font-weight: bold; }
+    .status-risco { color: red; font-weight: bold; }
+    .download-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #0984e3;
+      color: white;
       text-decoration: none;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: background-color 0.3s;
+      border-radius: 6px;
+      font-weight: bold;
     }
-    .botao-download:hover {
-      background-color: #219150;
+    @media screen and (max-width: 600px) {
+      table, th, td {
+        font-size: 0.85em;
+      }
+      h1 {
+        font-size: 1.5em;
+      }
+      .download-btn {
+        width: 100%;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
+  <h1>📊 Dashboard de Saúde - Nestor Gonçalves</h1>
 
-  <h1>Painel Semanal de Saúde Metabólica</h1>
-  <p style="text-align:center;"><strong>Nome:</strong> Nestor Gonçalves de Resende Junior</p>
+  <a class="download-btn" href="https://github.com/nettaskjr/paineldesaude-nestor/blob/main/4402025_67409.59468.853403.72240936.pdf" target="_blank">📎 Baixar Resultado do Exame (PDF)</a>
 
-  <section class="medico">
-    <h2>🩺 Considerações sobre os Exames</h2>
-    <h3>✅ Aspectos Positivos</h3>
-    <ul>
-      <li>Hemograma completo dentro dos parâmetros, sem sinais de anemia.</li>
-      <li>Função renal e hepática equilibradas.</li>
-      <li>PSA muito baixo, indicando baixo risco prostático.</li>
-      <li>Tireoide funcionando bem (TSH e T4 livre normais).</li>
-      <li>Vitamina B12 em nível adequado.</li>
-      <li>Urina sem anormalidades – sem infecções aparentes.</li>
-    </ul>
-    <h3>⚠️ Pontos de Atenção</h3>
-    <ul>
-      <li>Resistência à insulina (HOMA-IR elevado e insulina basal alta).</li>
-      <li>HDL abaixo do ideal e triglicerídeos elevados.</li>
-      <li>Ácido úrico acima do limite – cuidado com dieta rica em purinas.</li>
-      <li>Vitamina D insuficiente para grupos de risco (24 ng/mL).</li>
-      <li>HOMA-Beta elevado, sobrecarregando o pâncreas.</li>
-    </ul>
-    <p><em>Impressão Geral:</em> Saúde funcional preservada, com sinais de desregulação metabólica que podem ser melhorados com estilo de vida e acompanhamento clínico.</p>
-  </section>
+  <h2>🧪 Avaliação Clínica Geral</h2>
+  <table>
+    <tr><th>Exame</th><th>Resultado</th><th>Referência</th><th>Interpretação</th></tr>
+    <tr><td>HbA1c</td><td>5,6%</td><td><5,7%</td><td class="status-ok">Baixo risco</td></tr>
+    <tr><td>Vitamina D</td><td>24 ng/mL</td><td>>30</td><td class="status-alerta">Subideal</td></tr>
+    <tr><td>HDL</td><td>39 mg/dL</td><td>>40</td><td class="status-alerta">Levemente baixo</td></tr>
+    <tr><td>Triglicerídeos</td><td>171 mg/dL</td><td><150</td><td class="status-alerta">Limítrofe</td></tr>
+    <tr><td>Creatinina</td><td>1,27 mg/dL</td><td><1,20</td><td class="status-alerta">Alta</td></tr>
+    <tr><td>eTFG</td><td>71 mL/min</td><td>>90</td><td class="status-alerta">Redução discreta</td></tr>
+    <tr><td>Vitamina B12</td><td>365 pg/mL</td><td>197–771</td><td class="status-ok">Normal</td></tr>
+    <tr><td>TSH</td><td>1,31 µUI/mL</td><td>0,27–4,20</td><td class="status-ok">Normal</td></tr>
+    <tr><td>PSA Total</td><td>0,43 ng/mL</td><td><4,00</td><td class="status-ok">Normal</td></tr>
+  </table>
 
-  <section style="text-align: center; margin: 40px;">
-    <a href="https://github.com/nettaskjr/paineldesaude/blob/5d0ced10f2c30c789cb3e7f1e33f5ce3a9ab26da/4402025_67409.59468.853403.72240936.pdf?raw=true" 
-       download 
-       style="background-color: #27ae60; color: white; padding: 12px 24px; font-size: 16px; text-decoration: none; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: inline-block;">
-      📥 Baixar Resultado do Exame (PDF)
-    </a>
-  </section>
-  
-  <section class="metas">
-    <h2>🎯 Metas da Semana</h2>
-    <ul>
-      <li>Reduzir consumo de açúcar e alimentos processados</li>
-      <li>Cumprir 5 sessões de atividade física</li>
-      <li>Tomar suplementação diária (Vitamina D3 + Ômega 3 + Magnésio/Zinco)</li>
-      <li>Manter hidratação de 2L por dia</li>
-      <li>Priorizar sono: dormir > 7h/noite</li>
-    </ul>
-  </section>
+  <h2>📌 Metas Mensais</h2>
+  <table>
+    <tr><th>Meta</th><th>Objetivo</th><th>Status</th><th>Progresso</th></tr>
+    <tr>
+      <td>Vitamina D > 30</td>
+      <td>Imunidade e ossos</td>
+      <td class="status-alerta">24 ng/mL</td>
+      <td><div class="bar-container"><div class="bar" style="width:80%;">80%</div></div></td>
+    </tr>
+    <tr>
+      <td>HDL > 40</td>
+      <td>Proteção cardiovascular</td>
+      <td class="status-alerta">39 mg/dL</td>
+      <td><div class="bar-container"><div class="bar" style="width:98%;">98%</div></div></td>
+    </tr>
+    <tr>
+      <td>Triglicerídeos < 150</td>
+      <td>Metabolismo</td>
+      <td class="status-alerta">171 mg/dL</td>
+      <td><div class="bar-container"><div class="bar" style="width:88%;">88%</div></div></td>
+    </tr>
+    <tr>
+      <td>eTFG > 90</td>
+      <td>Função renal</td>
+      <td class="status-alerta">71 mL/min</td>
+      <td><div class="bar-container"><div class="bar" style="width:79%;">79%</div></div></td>
+    </tr>
+  </table>
 
-  <section class="cronograma">
-    <h2>🗓️ Cronograma Semanal</h2>
-    <table>
-      <tr>
-        <th>Dia</th><th>Alimentação</th><th>Atividade Física</th><th>Suplementos</th><th>Extra</th>
-      </tr>
-      <tr><td>Segunda</td><td>Low carb + vegetais</td><td>Caminhada</td><td>D3 + Ômega 3</td><td>Evitar açúcar</td></tr>
-      <tr><td>Terça</td><td>Grãos integrais</td><td>Musculação leve</td><td>D3 + Zinco</td><td>Dormir cedo</td></tr>
-      <tr><td>Quarta</td><td>Sopa leve + proteína magra</td><td>Alongamento</td><td>D3</td><td>Meditação</td></tr>
-      <tr><td>Quinta</td><td>Mix de folhas + abacate</td><td>Caminhada</td><td>D3 + Magnésio</td><td>Pausa relaxante</td></tr>
-      <tr><td>Sexta</td><td>Receita funcional</td><td>Musculação leve</td><td>D3 + Ômega 3</td><td>Hidratação ativa</td></tr>
-      <tr><td>Sábado</td><td>Livre com consciência</td><td>Atividade ao ar livre</td><td>D3</td><td>Lazer</td></tr>
-      <tr><td>Domingo</td><td>Leve + planejamento</td><td>Descanso ativo</td><td>D3</td><td>Reflexão</td></tr>
-    </table>
-  </section>
+  <h2>🗓️ Cronograma Semanal</h2>
+  <ul>
+    <li><strong>Segunda:</strong> Caminhada + prato vegetal</li>
+    <li><strong>Terça:</strong> Suco verde + treino leve</li>
+    <li><strong>Quarta:</strong> Suplemento de Vitamina D</li>
+    <li><strong>Quinta:</strong> Evitar carboidratos refinados</li>
+    <li><strong>Sexta:</strong> Hidratação + descanso ativo</li>
+    <li><strong>Sábado:</strong> Livre com moderação</li>
+    <li><strong>Domingo:</strong> Planejar refeições</li>
+  </ul>
 
-  <section class="cardapio">
-    <h2>🥗 Sugestões de Cardápio</h2>
+  <h2>🛒 Lista de Compras</h2>
+  <ul>
+    <li>Peixes ricos em ômega-3</li>
+    <li>Aveia, chia, linhaça</li>
+    <li>Vegetais verdes escuros</li>
+    <li>Frutas com baixo índice glicêmico</li>
+    <li>Leite vegetal ou desnatado</li>
+    <li>Castanhas e nozes</li>
+    <li>Vitamina D3 suplemento</li>
+    <li>Stevia ou xilitol</li>
+  </ul>
 
-    <h3>Café da Manhã</h3>
-    <ul>
-      <li>Omelete com espinafre e azeite</li>
-      <li>Iogurte com chia e morangos</li>
-      <li>Smoothie de abacate com cacau</li>
-      <li>Aveia com banana e castanhas</li>
-    </ul>
-
-    <h3>Almoço</h3>
-    <ul>
-      <li>Frango grelhado + arroz integral + legumes</li>
-      <li>Peixe assado + purê de batata-doce</li>
-      <li>Omelete + quinoa + couve</li>
-      <li>Patinho moído + feijão + salada</li>
-    </ul>
-
-    <h3>Jantar</h3>
-    <ul>
-      <li>Sopa de legumes com frango</li>
-      <li>Tofu grelhado com salada verde</li>
-      <li>Wrap integral com avocado e frango</li>
-      <li>Omelete com cogumelos + salada crua</li>
-    </ul>
-
-    <h3>Lanches</h3>
-    <ul>
-      <li>Fruta com castanhas</li>
-      <li>Shake proteico com leite vegetal</li>
-      <li>Palitos de cenoura com homus</li>
-      <li>Iogurte com linhaça</li>
-    </ul>
-  </section>
-
-  <section class="mensal">
-    <h2>📊 Checklist Mensal</h2>
-    <ul>
-      <li>Repetir exames laboratoriais</li>
-      <li>Agendar consulta médica</li>
-      <li>Ajustar suplementação</li>
-      <li>Monitorar pressão e peso</li>
-      <li>Celebrar progresso com recompensa saudável</li>
-    </ul>
-  </section>
-<div class="rodape"><p>Saúde não é perfeição, é consistência com consciência.</p></div>
-</body></html>
+  <h2>🥗 Menu Semanal</h2>
+  <ul>
+    <li><strong>Café:</strong> Omelete com espinafre ou iogurte com chia</li>
+    <li><strong>Almoço:</strong> Arroz integral + salada + frango grelhado</li>
+    <li><strong>Jantar:</strong> Sopa de legumes + ovo cozido</li>
+  </ul>
+</body>
+</html>
